@@ -19,22 +19,23 @@ public class TypeUtil {
         }
         return sAccessMapForMethod;
     }
+
     private static Map<Integer, String> sAccessMapForMethod;
 
     public static Map<Integer, String> getAccessMapForMethod() {
         HashMap<Integer, String> map = new HashMap<>(12);
         map.put(Opcodes.ACC_PUBLIC, "PUBLIC");
-        map.put(Opcodes.ACC_PRIVATE,"PRIVATE");
-        map.put(Opcodes.ACC_PROTECTED,"PROTECTED");
-        map.put(Opcodes.ACC_STATIC,"STATIC");
-        map.put(Opcodes.ACC_FINAL,"FINAL");
+        map.put(Opcodes.ACC_PRIVATE, "PRIVATE");
+        map.put(Opcodes.ACC_PROTECTED, "PROTECTED");
+        map.put(Opcodes.ACC_STATIC, "STATIC");
+        map.put(Opcodes.ACC_FINAL, "FINAL");
         map.put(Opcodes.ACC_SYNCHRONIZED, "SYNCHRONIZED");
-        map.put(Opcodes.ACC_BRIDGE,"BRIDGE");
-        map.put(Opcodes.ACC_VARARGS,"VARARGS");
-        map.put(Opcodes.ACC_NATIVE,"NATIVE");
-        map.put(Opcodes.ACC_ABSTRACT,"ABSTRACT");
-        map.put(Opcodes.ACC_STRICT,"STRICT");
-        map.put(Opcodes.ACC_SYNTHETIC,"SYNTHETIC");
+        map.put(Opcodes.ACC_BRIDGE, "BRIDGE");
+        map.put(Opcodes.ACC_VARARGS, "VARARGS");
+        map.put(Opcodes.ACC_NATIVE, "NATIVE");
+        map.put(Opcodes.ACC_ABSTRACT, "ABSTRACT");
+        map.put(Opcodes.ACC_STRICT, "STRICT");
+        map.put(Opcodes.ACC_SYNTHETIC, "SYNTHETIC");
         return map;
     }
 

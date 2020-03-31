@@ -1,4 +1,3 @@
-
 package com.ss.android.ugc.bytex.common.log;
 
 import com.ss.android.ugc.bytex.common.log.Impl.SystemLoggerImpl;

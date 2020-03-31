@@ -3,8 +3,8 @@ package com.ss.android.ugc.bytex.transformer.processor.task;
 import com.ss.android.ugc.bytex.transformer.cache.FileCache;
 import com.ss.android.ugc.bytex.transformer.cache.FileData;
 import com.ss.android.ugc.bytex.transformer.processor.FileProcessor;
-import com.ss.android.ugc.bytex.transformer.processor.ProcessorChain;
 import com.ss.android.ugc.bytex.transformer.processor.Input;
+import com.ss.android.ugc.bytex.transformer.processor.ProcessorChain;
 
 import java.io.IOException;
 import java.util.List;

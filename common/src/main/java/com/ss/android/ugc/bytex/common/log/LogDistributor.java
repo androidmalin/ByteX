@@ -1,7 +1,6 @@
 package com.ss.android.ugc.bytex.common.log;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -17,11 +16,11 @@ public class LogDistributor implements ILogger {
         loggers.add(logger);
     }
 
-    public void removeLogger(ILogger logger){
+    public void removeLogger(ILogger logger) {
         loggers.remove(logger);
     }
 
-    public List<ILogger> getLoggers(){
+    public List<ILogger> getLoggers() {
         return new ArrayList<>(loggers);
     }
 

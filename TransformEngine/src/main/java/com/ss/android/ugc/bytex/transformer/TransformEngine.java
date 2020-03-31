@@ -28,11 +28,12 @@ public class TransformEngine {
     public TransformEngine(TransformContext context) {
         this.context = context;
     }
-    public void beginRun(){
+
+    public void beginRun() {
         context.markRunningState(false);
     }
 
-    public void running(){
+    public void running() {
         context.markRunningState(true);
     }
 
@@ -70,9 +71,10 @@ public class TransformEngine {
         return realProcessorList;
     }
 
-    public void endRun(){
+    public void endRun() {
 
     }
+
     public TransformContext getContext() {
         return context;
     }

@@ -14,9 +14,6 @@ import org.gradle.api.UnknownDomainObjectException;
 import org.gradle.internal.reflect.Instantiator;
 import org.gradle.invocation.DefaultGradle;
 
-import java.util.Collections;
-import java.util.List;
-
 import javax.annotation.Nonnull;
 
 public abstract class AbsPlugin<E extends BaseExtension> implements Plugin<Project>, IPlugin {

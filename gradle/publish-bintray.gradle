@@ -106,5 +106,5 @@ bintray {
             vcsTag = pomVersion
         }
     }
-    publications = isAndroid? ["mavenReleaseAar"] : ["mavenJar"]
+    publications = isAndroid ? ["mavenReleaseAar"] : ["mavenJar"]
 }

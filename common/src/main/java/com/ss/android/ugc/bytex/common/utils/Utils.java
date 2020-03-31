@@ -2,7 +2,6 @@ package com.ss.android.ugc.bytex.common.utils;
 
 import com.android.utils.Pair;
 import com.ss.android.ugc.bytex.transformer.TransformContext;
-import com.ss.android.ugc.bytex.transformer.cache.FileCache;
 import com.ss.android.ugc.bytex.transformer.location.Location;
 import com.ss.android.ugc.bytex.transformer.location.SearchScope;
 
@@ -14,7 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

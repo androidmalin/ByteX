@@ -301,7 +301,7 @@ public class Graph {
         return node.confirmOriginMethod(name, desc);
     }
 
-    public Map<String, Node> getNodes(){
+    public Map<String, Node> getNodes() {
         return Collections.unmodifiableMap(nodeMap);
     }
 }

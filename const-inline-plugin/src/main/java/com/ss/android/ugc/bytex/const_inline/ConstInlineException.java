@@ -1,6 +1,6 @@
 package com.ss.android.ugc.bytex.const_inline;
 
-public class ConstInlineException  extends RuntimeException{
+public class ConstInlineException extends RuntimeException {
     public ConstInlineException() {
     }
 

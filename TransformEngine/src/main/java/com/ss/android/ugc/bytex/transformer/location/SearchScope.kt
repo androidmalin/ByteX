@@ -9,10 +9,12 @@ enum class SearchScope {
      * equals to INPUT_JAR+INPUT_DIR
      */
     INPUT,
+
     /**
      * All input jar of the transform<br/>
      */
     INPUT_JAR,
+
     /**
      * All input dir(classes) of the transform<br/>
      */
@@ -24,10 +26,12 @@ enum class SearchScope {
      * equals to ORIGIN_JAR+ORIGIN_DIR
      */
     ORIGIN,
+
     /**
      * All input jar of the project<br/>
      */
     ORIGIN_JAR,
+
     /**
      * All input dir(classes) of the project<br/>
      */
