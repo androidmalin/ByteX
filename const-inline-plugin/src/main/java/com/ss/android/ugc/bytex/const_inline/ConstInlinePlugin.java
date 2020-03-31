@@ -2,6 +2,7 @@ package com.ss.android.ugc.bytex.const_inline;
 
 import com.android.build.gradle.AppExtension;
 import com.ss.android.ugc.bytex.common.CommonPlugin;
+import com.ss.android.ugc.bytex.common.TransformConfiguration;
 import com.ss.android.ugc.bytex.common.utils.Utils;
 import com.ss.android.ugc.bytex.common.visitor.ClassVisitorChain;
 import com.ss.android.ugc.bytex.const_inline.reflect.ReflectResolve;
@@ -21,6 +22,11 @@ import org.objectweb.asm.tree.MethodNode;
 
 import javax.annotation.Nonnull;
 
+/**
+ * https://github.com/androidmalin/ByteX/blob/master/wiki/ByteX-Developer-API-zh.md
+ * 创建好Plugin类后,我们需要让gradle能够识别到我们的plugin.
+ * 用注解的方式 @PluginConfig("bytex.const_inline")
+ */
 @PluginConfig("bytex.const_inline")
 public class ConstInlinePlugin extends CommonPlugin<ConstInlineExtension, Context> {
     @Override
@@ -86,12 +92,29 @@ public class ConstInlinePlugin extends CommonPlugin<ConstInlineExtension, Contex
         context.prepare();
     }
 
+    /**
+     * 我们需要修改字节码,所以需要注册一个ClassVisitor
+     */
     @Override
     public boolean transform(@NotNull String relativePath, @NotNull ClassVisitorChain chain) {
         if (!Utils.isRFile(relativePath)) {
             chain.connect(new InlineConstClassVisitor(context));
         }
         return super.transform(relativePath, chain);
+    }
+
+    /**
+     * 插件默认是增量的,如果插件不支持增量,需要返回false
+     */
+    @Nonnull
+    @Override
+    public TransformConfiguration transformConfiguration() {
+        return new TransformConfiguration() {
+            @Override
+            public boolean isIncremental() {
+                return true;
+            }
+        };
     }
 
     @Override

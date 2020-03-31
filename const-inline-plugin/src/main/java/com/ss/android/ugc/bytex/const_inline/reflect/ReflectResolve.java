@@ -37,14 +37,16 @@ public class ReflectResolve {
         if (type != null) {
             return type.getInternalName();
         }
-        AbstractInsnNode abstractInsnNode = node.instructions.get(index - 1);
+        //TODO: 修改为 index-3，正常
+        AbstractInsnNode abstractInsnNode = node.instructions.get(index - 3);
         if (abstractInsnNode instanceof MethodInsnNode) {
             MethodInsnNode methodInsnNode = (MethodInsnNode) abstractInsnNode;
             if ("java/lang/Class".equals(methodInsnNode.owner) && "forName".equals(methodInsnNode.name)) {
                 //Class.forName
                 if ("(Ljava/lang/String;)Ljava/lang/Class;".equals(methodInsnNode.desc)) {
                     //Class.forName("")
-                    String className = resolveLastLdc(index - 1, node, String.class);
+                    //TODO: 修改为 index-3，正常
+                    String className = resolveLastLdc(index - 3, node, String.class);
                     if (className != null) {
                         return Utils.replaceDot2Slash(className);
                     } else {

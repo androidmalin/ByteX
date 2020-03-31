@@ -7,6 +7,7 @@ buildscript {
         maven {
             url uri('../gradle_plugins')
         }
+        mavenCentral()
         google()
         jcenter()
         maven {
@@ -15,7 +16,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-
+        classpath "com.vanniktech:gradle-dependency-graph-generator-plugin:0.5.0"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
         classpath 'com.novoda:bintray-release:0.8.0'
@@ -25,6 +26,8 @@ buildscript {
         classpath "digital.wup:android-maven-publish:3.4.0"
     }
 }
+
+apply plugin: "com.vanniktech.dependency.graph.generator"
 
 allprojects {
     repositories {
